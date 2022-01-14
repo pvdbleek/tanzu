@@ -2,7 +2,8 @@
 This guide assumes the following:
 
 * MacOS with 16Gb of RAM or more (and plenty of CPU).
-* Homebrew installed
+* This example guide uses Docker Hub as the registry, so you need an account there or use your own registry.
+* Homebrew installed.
 * Downloaded Tanzu CLI package available from [https://network.tanzu.vmware.com/products/tanzu-application-platform/](https://docs.vmware.com/en/Tanzu-Application-Platform/1.0/tap/GUID-install-general.html)
 * Downloaded Tanzu Cluster Essentials package available from [https://network.tanzu.vmware.com/products/tanzu-cluster-essentials/](https://docs.vmware.com/en/Tanzu-Application-Platform/1.0/tap/GUID-install-general.html)
 * Accepted all EULAs as described here [https://docs.vmware.com/en/Tanzu-Application-Platform/1.0/tap/GUID-install-general.html](https://docs.vmware.com/en/Tanzu-Application-Platform/1.0/tap/GUID-install-general.html)
@@ -178,3 +179,29 @@ subjects:
     name: default
 
 EOF
+```
+
+## Shutting down
+
+You can stop your cluster with the following command:
+
+```
+minikube stop
+```
+
+This will store the state of the environment and can be restarted with:
+
+```
+minikube start
+```
+TAP should be up an running in a few minutes.
+
+Minkube does not always guarantee the same IP adress however, so sometimes you may have to change the IP in `tap-values.yml` and update your TAP installation using the following command:
+
+```
+tanzu package installed update tap \
+    -p tap.tanzu.vmware.com \
+    -v 1.0.0 \
+    --values-file tap-values.yml \
+    -n tap-install
+```
