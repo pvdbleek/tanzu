@@ -4,7 +4,7 @@ This guide assumes the following:
 * MacOS with 16Gb of RAM or more (and plenty of CPU).
 * Homebrew installed
 * Downloaded Tanzu CLI package available from [https://network.tanzu.vmware.com/products/tanzu-application-platform/](https://docs.vmware.com/en/Tanzu-Application-Platform/1.0/tap/GUID-install-general.html)
-* Downloaded Tanzu Cluster Eessentials available from [https://network.tanzu.vmware.com/products/tanzu-cluster-essentials/](https://docs.vmware.com/en/Tanzu-Application-Platform/1.0/tap/GUID-install-general.html)
+* Downloaded Tanzu Cluster Essentials package available from [https://network.tanzu.vmware.com/products/tanzu-cluster-essentials/](https://docs.vmware.com/en/Tanzu-Application-Platform/1.0/tap/GUID-install-general.html)
 * Accepted all EULAs as described here [https://docs.vmware.com/en/Tanzu-Application-Platform/1.0/tap/GUID-install-general.html](https://docs.vmware.com/en/Tanzu-Application-Platform/1.0/tap/GUID-install-general.html)
 
 
