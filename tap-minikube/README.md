@@ -84,7 +84,7 @@ Adjust `tap-values.yml` to reflect your environment and start the installation:
 tanzu package install tap  \
      -p tap.tanzu.vmware.com \
      -v 1.0.0 \
-     --values-file tap-values.yml 
+     --values-file tap-values.yml \
      -n tap-install  
 
 tanzu secret registry add registry-credentials \
