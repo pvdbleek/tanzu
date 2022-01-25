@@ -1,4 +1,9 @@
-profile: light
+profile: full
+excluded_packages:
+  - api-portal.tanzu.vmware.com
+  - image-policy-webhook.signing.apps.tanzu.vmware.com
+  - learningcenter.tanzu.vmware.com
+  - workshops.learningcenter.tanzu.vmware.com
 
 buildservice:
   kp_default_repository: '<your_dockerhub_username>/tbs'
@@ -8,8 +13,10 @@ buildservice:
   tanzunet_password: "<your_tanzunet_password>"
 
 supply_chain: basic
+#supply_chain: testing_scanning
 
 ootb_supply_chain_basic:
+#ootb_supply_chain_basic_testing_scanning:
   service_account: default
   cluster_builder: default
   registry:
@@ -17,7 +24,13 @@ ootb_supply_chain_basic:
     repository: '<your_dockerhub_username>'
   gitops:
     # Leave empty for public repos, add a secret for private repos.
-    ssh_secret: ""
+    ssh_secret: "git-ssh"
+    repository_prefix: git@github.com:pvdbleek/
+    # The following parameters are optional:
+    # username: ""
+    # email: ""
+    # branch: ""
+    # commit_message: ""
 
 tap_gui:
   service_type: ClusterIP
@@ -56,3 +69,7 @@ ceip_policy_disclosed: true
 
 metadata_store:
   app_service_type: 'NodePort'
+
+grype:
+  namespace: "default" 
+  targetImagePullSecret: "registry-credentials"
